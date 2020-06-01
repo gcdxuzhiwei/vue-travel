@@ -2,7 +2,7 @@
     <div>
         <div class="recommend-title">热销推荐</div>
         <ul>
-            <li class="item" border-bottom v-for="item of recommendList" :key="item.id">
+            <li class="item" border-bottom v-for="item of list" :key="item.id">
                 <img :src="item.imgUrl" alt="" class="item-img">
                 <div class="item-info">
                     <p class="item-title">{{item.title}}</p>
@@ -17,25 +17,8 @@
 <script>
     export default {
         name: "HomeRecommend",
-        data(){
-            return {
-                recommendList:[{
-                    id:'0001',
-                    imgUrl:'http://img1.qunarzz.com/sight/p0/2005/a9/a9411416ff215fe2a3.water.jpg_200x200_3110fb7b.jpg',
-                    title:'上海迪士尼乐园',
-                    desc:'全球最大的迪士尼城堡'
-                },{
-                    id:'0002',
-                    imgUrl:'http://img1.qunarzz.com/sight/p0/2005/23/23c1b2b13230b966a3.water.jpg_200x200_f3a19805.jpg',
-                    title:'上海野生动物园',
-                    desc:'会跳芭蕾的小海狮们~'
-                },{
-                    id:'0003',
-                    imgUrl:'http://img1.qunarzz.com/tuan/team2/1507/2c/83e0e0e7ae082a.jpg_200x200_6d7378b2.jpg',
-                    title:'东方明珠',
-                    desc:'259米透明悬空观光廊了解一下~'
-                }]
-            }
+        props:{
+            list:Array
         }
     }
 </script>

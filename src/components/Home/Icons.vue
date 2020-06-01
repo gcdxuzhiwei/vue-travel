@@ -1,6 +1,6 @@
 <template>
     <div class="icons">
-        <swiper>
+        <swiper :options="swiperOptions">
             <swiper-slide v-for="(page,index) of pages" :key="index">
                 <div class="icon" v-for="item of page" :key="item.id">
                     <div class="icon-img">
@@ -18,51 +18,20 @@
 <script>
     export default {
         name: "HomeIcons",
+        props:{
+          list:Array
+        },
         data(){
             return {
-                iconList:[{
-                    id:'0001',
-                    imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-                    desc:'景点门票'
-                },{
-                    id:'0002',
-                    imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/fa/2548667cb6e902.png',
-                    desc:'东方明珠'
-                },{
-                    id:'0003',
-                    imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/de/f26be47a6bf02a02.png',
-                    desc:'上海迪士尼'
-                },{
-                    id:'0004',
-                    imgUrl:'https://img1.qunarzz.com/piao/fusion/1810/50/26ffa31b56646402.png',
-                    desc:'上海海昌'
-                },{
-                    id:'0005',
-                    imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/47/c2b659e048b11602.png',
-                    desc:'上海野生动物园'
-                },{
-                    id:'0006',
-                    imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/b1/528a9e80403b8c02.png',
-                    desc:'上海欢乐谷'
-                },{
-                    id:'0007',
-                    imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/8c/47630407f70e8302.png',
-                    desc:'上影乐园'
-                },{
-                    id:'0008',
-                    imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-                    desc:'上海杜莎'
-                },{
-                    id:'0009',
-                    imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/76/eb88861d78fb9902.png',
-                    desc:'东方绿舟'
-                }]
+                swiperOptions:{
+                    autoplay:false
+                }
             }
         },
         computed:{
             pages(){
                 const pages=[]
-                this.iconList.forEach((item,index)=>{
+                this.list.forEach((item,index)=>{
                     const page=Math.floor(index/8)
                     if(!pages[page]){
                         pages[page]=[]
@@ -97,7 +66,7 @@
                 right 0
                 bottom .44rem
                 box-sizing border-box
-                padding .1rem
+                padding 0.2rem 0.1rem 0 0.1rem
                 .icon-img-content
                     display block
                     margin 0 auto
