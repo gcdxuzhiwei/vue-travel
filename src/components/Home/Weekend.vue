@@ -2,7 +2,7 @@
     <div>
         <div class="recommend-title">周末去哪儿</div>
         <ul>
-            <li class="item" border-bottom v-for="item of list" :key="item.id">
+            <li class="item border-bottom" v-for="item of list" :key="item.id">
                 <div class="item-img-wrapper">
                     <img :src="item.imgUrl" alt="" class="item-img">
                 </div>
