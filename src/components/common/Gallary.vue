@@ -25,10 +25,8 @@
         data(){
             return {
                 swiperOptions:{
-                    pagination:{
-                        el:'.swiper-pagination',
-                        type:'fraction'
-                    },
+                    pagination: '.swiper-pagination',
+                    paginationType: 'fraction',
                     observeParents:true,
                     observer:true
                 }
