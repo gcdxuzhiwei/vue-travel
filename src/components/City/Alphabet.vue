@@ -37,7 +37,7 @@
             }
         },
         updated() {
-            this.$refs['A'][0].offsetTop
+            this.startY=this.$refs['A'][0].offsetTop
         },
         methods: {
             handleLetterClick(e) {
